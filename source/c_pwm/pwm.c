@@ -338,6 +338,7 @@ setup_sighandlers(void)
 {
     int i;
     for (i = 0; i < 64; i++) {
+        if (i == 28) continue;
         struct sigaction sa;
         memset(&sa, 0, sizeof(sa));
         sa.sa_handler = (void *) terminate;
